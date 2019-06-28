@@ -1,0 +1,39 @@
+{
+  "name": "__MSG_appName__",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "__MSG_appDescription__",
+  "icons": {
+    "16": "icon-34.png",
+    "128": "icon-128.png"
+  },
+    
+  "background": {
+    "scripts": [    
+      "background.bundle.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://app.stackpath.com/*"],
+      "js": ["options.bundle.js"]
+    }
+  ],
+
+  "permissions": [
+    "background",
+    "cookies",
+    "https://app.stackpath.com/*",
+    "debugger",
+    "tabs",
+    "webRequest"
+  ],
+  "page_action": {
+    "default_icon": {
+      "19": "icon-34.png",
+      "38": "icon-128.png"
+    },
+    "default_title": "StackPathExtension",
+    "default_popup": "popup.html"    
+  }
+}
